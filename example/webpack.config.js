@@ -1,5 +1,5 @@
 const path = require('path')
-const VueLoaderPlugin = require('../lib/plugin')
+const LoaderPlugin = require('../lib/plugin')
 
 module.exports = {
   mode: 'development',
@@ -17,8 +17,8 @@ module.exports = {
     rules: [
       // { loader: require.resolve('./debugger') },
       {
-        test: /\.rea$/,
-        loader: 'rea-loader'
+        test: /\.react$/,
+        loader: 'react-webpack-loader'
       },
       // example to apply loader to a custom block without lang="xxx"
       // this rule applies to <foo> blocks
@@ -88,10 +88,10 @@ module.exports = {
   },
   resolveLoader: {
     alias: {
-      'rea-loader': require.resolve('../lib')
+      'react-webpack-loader': require.resolve('../lib')
     }
   },
   plugins: [
-    new VueLoaderPlugin()
+    new LoaderPlugin()
   ]
 }

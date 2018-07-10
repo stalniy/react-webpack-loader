@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Foo from './source.rea'
+import App from './source.react'
 
 ReactDOM.render(
-  React.createElement(Foo),
+  React.createElement(App),
   document.getElementById('app')
 )
