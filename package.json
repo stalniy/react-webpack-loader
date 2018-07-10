@@ -1,7 +1,7 @@
 {
-  "name": "vue-loader",
-  "version": "15.2.4",
-  "description": "Vue single-file component loader for Webpack",
+  "name": "react-webpack-loader",
+  "version": "0.0.1",
+  "description": "React single-file component loader for Webpack",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "scripts": {
@@ -13,12 +13,12 @@
     "docs:build": "vuepress build docs",
     "prepublishOnly": "conventional-changelog -p angular -r 2 -i CHANGELOG.md -s"
   },
-  "author": "Evan You",
+  "author": "Sergii Stotskyi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vuejs/vue-loader/issues"
+    "url": "https://github.com/stalniy/react-webpack-loader/issues"
   },
-  "homepage": "https://github.com/vuejs/vue-loader",
+  "homepage": "https://github.com/stalniy/react-webpack-loader",
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
@@ -33,7 +33,8 @@
     ]
   },
   "peerDependencies": {
-    "css-loader": "*"
+    "css-loader": "*",
+    "react-template-compiler": "*"
   },
   "dependencies": {
     "@vue/component-compiler-utils": "^2.0.0",
