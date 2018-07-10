@@ -33,13 +33,16 @@
     ]
   },
   "peerDependencies": {
-    "css-loader": "*",
-    "vue-template-compiler": "^2.0.0"
+    "css-loader": "*"
   },
   "dependencies": {
     "@vue/component-compiler-utils": "^2.0.0",
+    "de-indent": "^1.0.2",
     "hash-sum": "^1.0.2",
+    "he": "^1.1.1",
     "loader-utils": "^1.1.0",
+    "ramda": "^0.25.0",
+    "react-hot-loader": "^4.3.3",
     "vue-hot-reload-api": "^2.3.0",
     "vue-style-loader": "^4.1.0"
   },
@@ -66,6 +69,8 @@
     "pug": "^2.0.1",
     "pug-plain-loader": "^1.0.0",
     "raw-loader": "^0.5.1",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
     "sass-loader": "^6.0.7",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
@@ -75,7 +80,7 @@
     "url-loader": "^1.0.1",
     "vue": "^2.5.16",
     "vue-server-renderer": "^2.5.16",
-    "vue-template-compiler": "^2.5.16",
+    "react-template-compiler": "file://../react-template-compiler",
     "vuepress": "^0.10.0",
     "vuepress-theme-vue": "^1.0.3",
     "webpack": "^4.1.0",

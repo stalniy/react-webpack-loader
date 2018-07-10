@@ -10,15 +10,15 @@ module.exports = {
     publicPath: '/dist/'
   },
   devServer: {
-    stats: "minimal",
+    stats: 'minimal',
     contentBase: __dirname
   },
   module: {
     rules: [
       // { loader: require.resolve('./debugger') },
       {
-        test: /\.vue$/,
-        loader: 'vue-loader'
+        test: /\.rea$/,
+        loader: 'rea-loader'
       },
       // example to apply loader to a custom block without lang="xxx"
       // this rule applies to <foo> blocks
@@ -32,7 +32,7 @@ module.exports = {
         oneOf: [
           // this applies to <template lang="pug"> in Vue components
           {
-            resourceQuery: /^\?vue/,
+            resourceQuery: /^\?rea/,
             use: ['pug-plain-loader']
           },
           // this applies to pug imports inside JavaScript
@@ -88,7 +88,7 @@ module.exports = {
   },
   resolveLoader: {
     alias: {
-      'vue-loader': require.resolve('../lib')
+      'rea-loader': require.resolve('../lib')
     }
   },
   plugins: [

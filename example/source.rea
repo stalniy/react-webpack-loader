@@ -1,0 +1,46 @@
+<template>
+  <div title="test me">
+    <h1>{{ state.msg }}</h1>
+    <input type="text" :style="state.css" r-model="state.msg" />
+    <span>
+      <div r-for="item in state.items" :key="item.name">{{ item.name }}</div>
+    </span>
+    <button @click="changeV">change</button>
+    <template r-if="state.isVisible">
+      test
+    </template>
+    {{ state.value }}
+  </div>
+</template>
+
+<script>
+
+export default {
+  data() {
+    return {
+      msg: 'Hello World',
+      css: { border: '1px solid red' },
+      isVisible: false,
+      value: 0,
+      items: [
+        { name: 'test' },
+        { name: 'me'
+      }]
+    }
+  },
+  methods: {
+    changeV() {
+      this.$set('isVisible', !this.state.isVisible)
+    },
+    updateValue(counter) {
+      this.setState({ value: counter })
+    }
+  }
+}
+</script>
+
+<style scoped>
+span {
+  color: red;
+}
+</style>
