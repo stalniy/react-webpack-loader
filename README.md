@@ -1,15 +1,12 @@
-# vue-loader [![Build Status](https://circleci.com/gh/vuejs/vue-loader/tree/master.svg?style=shield)](https://circleci.com/gh/vuejs/vue-loader/tree/master) [![Windows Build status](https://ci.appveyor.com/api/projects/status/8cdonrkbg6m4k1tm/branch/master?svg=true)](https://ci.appveyor.com/project/yyx990803/vue-loader/branch/master)
+# react-loader
 
-> webpack loader for Vue Single-File Components
+**under development**
 
-**NOTE:** The master branch now hosts the code for v15! Legacy code is now in the [v14 branch](https://github.com/vuejs/vue-loader/tree/v14).
+> webpack loader for React Single-File Components
 
-- [Documentation](https://vue-loader.vuejs.org)
-- [Migrating from v14](https://vue-loader.vuejs.org/migrating.html)
+## What is React Loader?
 
-## What is Vue Loader?
-
-`vue-loader` is a loader for [webpack](https://webpack.js.org/) that allows you to author Vue components in a format called [Single-File Components (SFCs)](./docs/spec.md):
+`react-webpack-loader` is a loader for [webpack](https://webpack.js.org/) that allows you to author React components in a format called [Single-File Components (SFCs)](./docs/spec.md):
 
 ``` vue
 <template>
@@ -33,12 +30,13 @@ export default {
 </style>
 ```
 
-There are many cool features provided by `vue-loader`:
+There are many cool features provided by `react-webpack-loader`:
 
 - Allows using other webpack loaders for each part of a Vue component, for example Sass for `<style>` and Pug for `<template>`;
-- Allows custom blocks in a `.vue` file that can have custom loader chains applied to them;
+- Allows custom blocks in a `.react` file that can have custom loader chains applied to them;
 - Treat static assets referenced in `<style>` and `<template>` as module dependencies and handle them with webpack loaders;
 - Simulate scoped CSS for each component;
+- Improves rendering performance by localizing static virtual node trees and caching them (thanks to [react-template-compiler](https://github.com/stalniy/react-template-compiler))
 - State-preserving hot-reloading during development.
 
-In a nutshell, the combination of webpack and `vue-loader` gives you a modern, flexible and extremely powerful front-end workflow for authoring Vue.js applications.
+In a nutshell, the combination of webpack and `react-webpack-loader` gives you a modern, flexible and extremely powerful front-end workflow for authoring React.js applications.
