@@ -32,7 +32,7 @@ export default {
 
 There are many cool features provided by `react-webpack-loader`:
 
-- Allows using other webpack loaders for each part of a Vue component, for example Sass for `<style>` and Pug for `<template>`;
+- Allows using other webpack loaders for each part of a React component, for example Sass for `<style>` and Pug for `<template>`;
 - Allows custom blocks in a `.react` file that can have custom loader chains applied to them;
 - Treat static assets referenced in `<style>` and `<template>` as module dependencies and handle them with webpack loaders;
 - Simulate scoped CSS for each component;
