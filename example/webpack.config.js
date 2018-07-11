@@ -11,7 +11,9 @@ module.exports = {
   },
   devServer: {
     stats: 'minimal',
-    contentBase: __dirname
+    contentBase: __dirname,
+    hot: true,
+    watchContentBase: true
   },
   module: {
     rules: [
