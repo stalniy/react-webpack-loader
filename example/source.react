@@ -1,21 +1,25 @@
 <template>
-  <div title="test me">
-    <h1>{{ state.msg }}</h1>
-    <input type="text" :style="state.css" r-model="state.msg" />
-    <span>
-      <div r-for="item in state.items" :key="item.name">{{ item.name }}</div>
-    </span>
-    <button @click="changeV">change</button>
-    <template r-if="state.isVisible">
-      test
-    </template>
-    {{ state.value }}
+  <div>
+    <button @click="toggle" ref="test">toggle</button>
+    <input r-model="state.items[0].name">
+    <div r-for="item in state.items" :key="item.id">
+      <div>{{ item.name }}</div>
+    </div>
+    <Cmp>
+      <h1 slot-scope="{ todo }">{{ todo.title }}</h1>
+      <span slot="test">test me here</span>
+      <span slot="test2">test me here2</span>
+    </Cmp>
   </div>
 </template>
 
 <script>
+import Cmp from './Component.react'
 
 export default {
+  components: {
+    Cmp
+  },
   data() {
     return {
       msg: 'Hello World',
@@ -23,13 +27,13 @@ export default {
       isVisible: false,
       value: 0,
       items: [
-        { name: 'test' },
-        { name: 'me'
-      }]
+        { name: 'test', id: 1 },
+        { name: 'me', id: 2 }
+      ]
     }
   },
   methods: {
-    changeV() {
+    toggle() {
       this.$set('isVisible', !this.state.isVisible)
     },
     updateValue(counter) {

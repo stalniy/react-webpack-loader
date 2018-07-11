@@ -1,0 +1,39 @@
+<template>
+  <div>
+    <h2>Inside component</h2>
+    <slot name="test"></slot>
+
+    <br><strong><slot name="test2">test</slot></strong>
+
+    <slot :todo="state.todo">
+      {{ state.todo.id }}
+    </slot>
+  </div>
+</template>
+
+<script>
+export default {
+  data: () => ({
+    counter: 1,
+    todo: {
+      title: 'title',
+      id: 'id'
+    }
+  }),
+  methods: {
+    updateCounter() {
+      this.setState((p) => {
+        p.counter++
+        return p
+      })
+      this.$emit('update', this.state.counter)
+    }
+  }
+}
+</script>
+
+<style scoped>
+span {
+  color: green;
+}
+</style>
