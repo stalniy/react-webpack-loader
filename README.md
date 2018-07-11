@@ -1,6 +1,6 @@
 # react-loader
 
-**under development**
+**under development**: see [support](https://github.com/stalniy/react-webpack-loader/issues/18) for details
 
 > webpack loader for React Single-File Components
 
@@ -10,7 +10,7 @@
 
 ``` vue
 <template>
-  <div class="example">{{ msg }}</div>
+  <div>{{ msg }}</div>
 </template>
 
 <script>
