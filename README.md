@@ -53,6 +53,8 @@ npm i react-webpack-loader --save-dev
 Then in your webpack config add few loaders:
 
 ```js
+const SFCPlugin = require('react-webpack-loader/lib/plugin')
+
 module.exports = {
   // ...
   module: {
@@ -105,9 +107,16 @@ module.exports = {
         ]
       }
     ]
-  }
+  },
+  plugins: [
+    new SFCPlugin()
+  ]
   // ...
 }
 ```
 
 You can use any configuration for your `CSS` files, also you can use JSX together with scoped styles.
+
+## Playground
+
+To play around just clone this repo and run `npm run dev`. Change files in `example/` and see what you will come up with :)
