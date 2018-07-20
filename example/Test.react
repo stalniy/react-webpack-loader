@@ -1,11 +1,15 @@
 <script>
+  import { Component } from 'react'
   import { h } from 'react-template-compiler/helpers'
 
-  export default function Test(props) {
-    return h('div',
-      h('h2', 'This is React Function template'),
-      props.msg
-    )
+  export default class Test extends Component {
+    render() {
+      return h('div',
+        h('h2', 'This is React Function template'),
+        this.props.msg,
+        this.$slots.default
+      )
+    }
   }
 </script>
 
