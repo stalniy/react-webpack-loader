@@ -3,14 +3,14 @@
 
   export default function Test(props) {
     return h('div',
-      h('h2', 'This is React, JSX'),
+      h('h2', 'This is React Function template'),
       props.msg
     )
   }
 </script>
 
 <style scoped>
-  div {
+  h2 {
     color: blue;
   }
 </style>

@@ -11,7 +11,9 @@
       <span slot="test">test me here</span>
       <span slot="test2">test me here2</span>
     </Cmp>
-    <Test :msg="state.msg"></Test>
+    <Test :msg="state.msg">
+      Slot
+    </Test>
   </div>
 </template>
 

@@ -33,9 +33,6 @@ export default {
     update() {
       this.$emit('update:msg', 'test me')
     }
-  },
-  componentWillMount() {
-    console.log(this.props)
   }
 }
 </script>
