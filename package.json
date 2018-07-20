@@ -73,7 +73,7 @@
     "raw-loader": "^0.5.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-template-compiler": "file://../react-template-compiler",
+    "react-template-compiler": "^0.2.0",
     "sass-loader": "^6.0.7",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
