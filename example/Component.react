@@ -1,6 +1,8 @@
 <template>
   <div>
     <h2>Inside component</h2>
+    <h3>{{ props.msg }}</h3>
+    <button @click="props.onClick">update message</button>
     <slot name="test"></slot>
 
     <br><strong><slot name="test2">test</slot></strong>
@@ -27,7 +29,13 @@ export default {
         return p
       })
       this.$emit('update', this.state.counter)
+    },
+    update() {
+      this.$emit('update:msg', 'test me')
     }
+  },
+  componentWillMount() {
+    console.log(this.props)
   }
 }
 </script>

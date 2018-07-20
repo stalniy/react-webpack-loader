@@ -1,24 +1,28 @@
 <template>
   <div>
-    <button @click="toggle" ref="test">toggle</button>
-    <input r-model="state.items[0].name">
+    <button @click="toggle" @click.stop="log" ref="test" class="test me here" :class="{ red: state.isVisible }">display</button>
+    <button @click="add">add</button>
+    <input r-model="state.msg">
     <div r-for="item in state.items" :key="item.id">
-      <div>{{ item.name }}</div>
+      <div ref="item" @click="remove(item)">{{ item.name }}</div>
     </div>
-    <Cmp>
+    <Cmp @click.once="toggle" :msg="state.msg">
       <h1 slot-scope="{ todo }">{{ todo.title }}</h1>
       <span slot="test">test me here</span>
       <span slot="test2">test me here2</span>
     </Cmp>
+    <Test :msg="state.msg"></Test>
   </div>
 </template>
 
 <script>
 import Cmp from './Component.react'
+import Test from './Test.react'
 
 export default {
   components: {
-    Cmp
+    Cmp,
+    Test
   },
   data() {
     return {
@@ -26,6 +30,8 @@ export default {
       css: { border: '1px solid red' },
       isVisible: false,
       value: 0,
+      current: '',
+      styles: 'border: 1px solid black',
       items: [
         { name: 'test', id: 1 },
         { name: 'me', id: 2 }
@@ -33,18 +39,32 @@ export default {
     }
   },
   methods: {
+    add() {
+      this.setState({ items: this.state.items.concat({
+        id: this.state.items.length + 1,
+        name: this.state.current
+      }) })
+      this.$set('current', '')
+    },
     toggle() {
-      this.$set('isVisible', !this.state.isVisible)
+      this.setState({ isVisible: !this.state.isVisible })
     },
     updateValue(counter) {
       this.setState({ value: counter })
-    }
+    },
+    remove(item) {
+      this.setState({ items: this.state.items.filter(i => i !== item) })
+    },
+    log(event) {
+      console.log(event.type)
+    },
+    test(event) { console.log(event)}
   }
 }
 </script>
 
 <style scoped>
-span {
+span, .red {
   color: red;
 }
 </style>

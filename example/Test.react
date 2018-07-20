@@ -1,0 +1,16 @@
+<script>
+  import { h } from 'react-template-compiler/helpers'
+
+  export default function Test(props) {
+    return h('div',
+      h('h2', 'This is React, JSX'),
+      props.msg
+    )
+  }
+</script>
+
+<style scoped>
+  div {
+    color: blue;
+  }
+</style>

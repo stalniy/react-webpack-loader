@@ -25,6 +25,11 @@ module.exports = {
       // example to apply loader to a custom block without lang="xxx"
       // this rule applies to <foo> blocks
       {
+        test: /\.jsx?$/,
+        exclude: [/node_modules/],
+        loader: 'babel-loader'
+      },
+      {
         resourceQuery: /blockType=foo/,
         loader: 'babel-loader'
       },
